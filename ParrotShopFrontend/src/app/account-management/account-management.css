@@ -1,0 +1,145 @@
+/* Container & Header */
+.mgmtCont {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4vw 5vw;
+}
+
+.mgmtHeader {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+}
+
+.mgmtHeader h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 4vw, 50px);
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.mgmtHeader p {
+    color: #666;
+    font-size: 1.15rem;
+}
+
+/* Card Layout */
+.mgmt-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card {
+    border: 2px solid var(--accent);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    padding: 2.5rem;
+}
+
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1.5rem;
+    color: #222;
+    font-size: 1.8rem;
+}
+
+.form-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eaeaea;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #fafafa;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px var(--accent-light);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.btn-save {
+    background-color: var(--accent);
+    color: whitesmoke;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px var(--accent-light);
+}
+
+.actions-card .mainMgmt {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.logout {
+    background-color: var(--accent);
+    color: whitesmoke;
+    border: 2px solid #ddd;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+.delAcc {
+    background-color: #b80000;
+    color: whitesmoke;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delAcc:hover {
+    background-color: #ffebee;
+    border-color: #ef5350;
+}

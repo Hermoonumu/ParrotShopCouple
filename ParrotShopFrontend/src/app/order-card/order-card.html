@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-header">
+    <div class="meta">
+      <h3>Order #{{ order()?.id }}</h3>
+      <h4>By user: {{ order()?.userId }}</h4>
+      <span class="badge">{{ order()?.status }}</span>
+    </div>
+
+    <button class="toggle-btn" (click)="isExpanded.update((c) => !c)">
+      {{ isExpanded() ? 'Hide Items' : 'View Items' }}
+    </button>
+  </div>
+
+  @if (isExpanded()) {
+    <div class="items-list">
+      @for (item of order()?.orderItems; track item.id) {
+        <div class="item">
+          <div class="item-info">
+            <p>Item ID: {{ item.linkedItemId }}</p>
+            <p>Qty: {{ item.qty }}</p>
+            <a [href]="'/parrot/' + item.linkedItemId">Visit Item</a>
+          </div>
+          <div class="item-price">
+            {{ item.priceAtOrderTime | currency: 'USD' }}
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="card-footer">
+      @if (admin()) {
+        <div class="admin-controls">
+          <select name="" id="" (change)="change($event)">
+            <option value="0" selected>-- Select a Status --</option>
+            <option value="Processing">Processing</option>
+            <option value="Shipped">Shipped</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+          <button (click)="submit()">Update</button>
+        </div>
+      }
+
+      <div class="total-block">
+        <h4>Total</h4>
+        <h4 class="total-price">{{ order()?.total | currency: 'USD' }}</h4>
+      </div>
+    </div>
+  }
+</div>

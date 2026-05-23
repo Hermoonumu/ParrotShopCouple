@@ -1,0 +1,18 @@
+<div class="wrapperPay">
+  <div id="stripe-payment"></div>
+
+  @if (errorMessage() != '') {
+    <div id="payment-message" style="color: red">
+      {{ errorMessage() }}
+    </div>
+  }
+
+  <button class="button" (click)="pay()" [disabled]="isProcessing()">
+    @if (isProcessing()) {
+      <span>Processing...</span>
+    }
+    @if (!isProcessing()) {
+      <span>Pay Now</span>
+    }
+  </button>
+</div>

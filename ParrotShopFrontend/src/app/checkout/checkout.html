@@ -1,0 +1,92 @@
+<div id="top"></div>
+<div id="main">
+  <div class="progress"></div>
+  <div class="wrapper">
+    <div class="header">
+      <h2>Checkout</h2>
+      <h4>Finalise your order</h4>
+    </div>
+    <div class="status">
+      <p [class.active]="status() == 0" (click)="status.set(0)">Information</p>
+      <p [class.active]="status() == 1" (click)="status.set(1)">Review</p>
+      <p [class.active]="status() == 2" (click)="status.set(2)">Payment</p>
+    </div>
+    <sup class="hint">You can move between sections by clicking on them</sup>
+    <div class="inner">
+      @if (status() == 0) {
+        <div class="address">
+          <p>
+            Please check whether the data below is correct. If not, navigate to
+            <a routerLink="/accmgmt" style="color: var(--accent); font-weight: 600; cursor: pointer"
+              >User Settings</a
+            >
+            to correct it.
+          </p>
+
+          <div class="info">
+            <sub>Name:</sub>
+            <p class="field">{{ auth.state().name == undefined ? 'Empty' : auth.state().name }}</p>
+            <sub>phone Number:</sub>
+            <p class="field">
+              {{ auth.state().phone == undefined ? 'Empty' : auth.state().phone }}
+            </p>
+            <sub>Address:</sub>
+            <p class="field">
+              {{
+                auth.state().shippingaddress == undefined ? 'Empty' : auth.state().shippingaddress
+              }}
+            </p>
+            <sub>E-mail:</sub>
+            <p class="field">
+              {{ auth.state().email == undefined ? 'Empty' : auth.state().email }}
+            </p>
+          </div>
+          <button class="button" (click)="status.set(1)">All Good</button>
+        </div>
+      }
+      @if (status() == 1) {
+        <div class="review">
+          <p>
+            Your purchase consists of
+            <span style="font-weight: bold"
+              >{{ cart.cart().cartItems.length }} item{{ sOrNot() }}</span
+            >
+            and totals
+            <span style="font-weight: bold">{{ total() | currency: 'USD' }}</span>
+          </p>
+
+          <p>You're buying the following items:</p>
+          <div class="list">
+            @for (item of cart.cart().cartItems; track $index) {
+              <div class="cartItem">
+                <div class="image">
+                  <img
+                    [src]="
+                      item.item.imageUrl == ''
+                        ? env.BASEURI + '/broken-image.jpg'
+                        : item.item.imageUrl
+                    "
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <div class="NameAndRemove">
+                    <h2>{{ item.item.name }}</h2>
+                  </div>
+                  <p>{{ item.item.speciesType }}</p>
+                  <div class="price">
+                    <p>{{ item.item.price | currency: 'USD' }}</p>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+          <button class="button" (click)="status.set(2)">All Correct</button>
+        </div>
+      }
+      @if (status() == 2) {
+        <app-payment class="payment"></app-payment>
+      }
+    </div>
+  </div>
+</div>

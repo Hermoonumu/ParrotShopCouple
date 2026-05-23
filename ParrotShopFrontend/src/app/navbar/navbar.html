@@ -1,0 +1,159 @@
+<nav class="navbar">
+  <div class="logo">
+    <a routerLink="/" fragment="top">Parrot<br />Shop</a>
+  </div>
+
+  <!--desktop view-->
+
+  <div class="desktop">
+    <div class="midsection">
+      <a routerLink="/browse" fragment="top">Parrots</a>
+
+      <a routerLink="/" fragment="aboutanchor">About</a>
+
+      <a routerLink="/" fragment="contactanchor">Contact</a>
+    </div>
+    <app-searchbar></app-searchbar>
+    <div class="lastsection">
+      <div class="icon-cont">
+        @if (auth.isLoggedIn()) {
+          <div class="envelope">
+            <button class="menu always" (click)="router.navigate(['/cart'])">
+              <svg viewBox="0 0 902.86 902.86" class="icon">
+                <g>
+                  <g>
+                    <path
+                      d="M671.504,577.829l110.485-432.609H902.86v-68H729.174L703.128,179.2L0,178.697l74.753,399.129h596.751V577.829z
+			 M685.766,247.188l-67.077,262.64H131.199L81.928,246.756L685.766,247.188z"
+                    />
+                    <path
+                      d="M578.418,825.641c59.961,0,108.743-48.783,108.743-108.744s-48.782-108.742-108.743-108.742H168.717
+			c-59.961,0-108.744,48.781-108.744,108.742s48.782,108.744,108.744,108.744c59.962,0,108.743-48.783,108.743-108.744
+			c0-14.4-2.821-28.152-7.927-40.742h208.069c-5.107,12.59-7.928,26.342-7.928,40.742
+			C469.675,776.858,518.457,825.641,578.418,825.641z M209.46,716.897c0,22.467-18.277,40.744-40.743,40.744
+			c-22.466,0-40.744-18.277-40.744-40.744c0-22.465,18.277-40.742,40.744-40.742C191.183,676.155,209.46,694.432,209.46,716.897z
+			 M619.162,716.897c0,22.467-18.277,40.744-40.743,40.744s-40.743-18.277-40.743-40.744c0-22.465,18.277-40.742,40.743-40.742
+			S619.162,694.432,619.162,716.897z"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </button>
+            @if (cart.cart()?.cartItems?.length; as count) {
+              <div class="cartSize">{{ count }}</div>
+            }
+          </div>
+        }
+      </div>
+      @if (auth.isAdmin()) {
+        <a routerLink="/manage" fragment="top">Manage</a>
+      }
+
+      @if (!auth.isLoggedIn()) {
+        <a routerLink="login" fragment="top">Sign In</a>
+
+        <a class="signup" routerLink="register" fragment="top">Sign Up</a>
+      } @else {
+        <a routerLink="orders" fragment="top">Orders</a>
+        <div
+          class="accountIcon"
+          [style.background-color]="auth.state().userColour"
+          (click)="router.navigate(['/accmgmt'])"
+        >
+          <span>{{ auth.state().username[0] }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="lastsection">
+    <div class="icon-cont">
+      @if (auth.isLoggedIn()) {
+        <div class="envelope">
+          <button class="menu" (click)="router.navigate(['/cart'])">
+            <svg class="icon" viewBox="0 0 902.86 902.86">
+              <g>
+                <g>
+                  <path
+                    d="M671.504,577.829l110.485-432.609H902.86v-68H729.174L703.128,179.2L0,178.697l74.753,399.129h596.751V577.829z
+			 M685.766,247.188l-67.077,262.64H131.199L81.928,246.756L685.766,247.188z"
+                  />
+                  <path
+                    d="M578.418,825.641c59.961,0,108.743-48.783,108.743-108.744s-48.782-108.742-108.743-108.742H168.717
+			c-59.961,0-108.744,48.781-108.744,108.742s48.782,108.744,108.744,108.744c59.962,0,108.743-48.783,108.743-108.744
+			c0-14.4-2.821-28.152-7.927-40.742h208.069c-5.107,12.59-7.928,26.342-7.928,40.742
+			C469.675,776.858,518.457,825.641,578.418,825.641z M209.46,716.897c0,22.467-18.277,40.744-40.743,40.744
+			c-22.466,0-40.744-18.277-40.744-40.744c0-22.465,18.277-40.742,40.744-40.742C191.183,676.155,209.46,694.432,209.46,716.897z
+			 M619.162,716.897c0,22.467-18.277,40.744-40.743,40.744s-40.743-18.277-40.743-40.744c0-22.465,18.277-40.742,40.743-40.742
+			S619.162,694.432,619.162,716.897z"
+                  />
+                </g>
+              </g>
+            </svg>
+          </button>
+          @if (cart.cart()?.cartItems?.length; as count) {
+            <div class="cartSizeMob">{{ count }}</div>
+          }
+        </div>
+      }
+      <button
+        class="menu"
+        aria-label="Toggle navigation menu"
+        aria-controls="main-navigation-options"
+        (click)="toggleMenu()"
+      >
+        <svg
+          class="icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  @if (isMenuOpen()) {
+    <div class="mobilemenu">
+      <div class="options">
+        <div class="midsection">
+          <a (click)="closeMenu()" routerLink="/browse" fragment="top">Parrots</a>
+
+          <a (click)="closeMenu()" routerLink="/" fragment="aboutanchor">About</a>
+
+          <a (click)="closeMenu()" routerLink="/" fragment="contactanchor">Contact</a>
+        </div>
+
+        <div class="lastsection">
+          @if (auth.isAdmin()) {
+            <a (click)="closeMenu()" routerLink="/manage" fragment="top">Manage</a>
+          }
+          @if (auth.isLoggedIn()) {
+            <a (click)="closeMenu()" routerLink="orders" fragment="top">Orders</a>
+          }
+
+          @if (!auth.isLoggedIn()) {
+            <a (click)="closeMenu()" routerLink="login" fragment="top">Sign In</a>
+
+            <a (click)="closeMenu()" class="signup" routerLink="register" fragment="top">Sign Up</a>
+          } @else {
+            <a (click)="closeMenu()" class="signup" routerLink="accmgmt" fragment="top"
+              >Manage Account</a
+            >
+          }
+        </div>
+      </div>
+    </div>
+  }
+</nav>
+
+<hr />

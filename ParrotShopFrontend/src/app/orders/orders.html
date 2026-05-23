@@ -1,0 +1,13 @@
+<div id="top"></div>
+<div class="wrapper">
+  <div class="header">
+    <h2>Order History</h2>
+    <p>Review your past purchases and their current status.</p>
+  </div>
+
+  <div class="orders">
+    @for (order of orders(); track order.id) {
+      <app-order-card [order]="order"></app-order-card>
+    }
+  </div>
+</div>

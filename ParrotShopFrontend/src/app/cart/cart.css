@@ -1,0 +1,148 @@
+.wrapper{
+    width: 100%;
+    padding:5vw 5vw;
+}
+
+.wrapper h1{
+    font-size: clamp(35px, 4vw, 55px);
+}
+
+
+.header h2{
+    font-size: clamp(35px, 2.5vw, 55px);
+}
+.header h3{
+    font-size: clamp(25px, 2vw, 35px);
+    margin-bottom: 20px;
+
+}
+
+.header p{
+    margin-top: clamp(1px, 2vw, 20px);
+    margin-bottom: clamp(20px, 3vw, 40px);
+}
+
+.image, .image img{
+    height: clamp(100px, 2vw, 300px);
+    width: clamp(100px, 2vw, 300px);
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.cartItms{
+    margin-top: 15px;
+}
+
+.cartItem{
+    display: flex;
+    padding: 10px;
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+    margin-bottom: 10px;
+    gap: 15px;
+}
+
+.details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nameAndRemove{
+    display:flex;
+    width: 100%;
+}
+
+.nameAndRemove button{
+    margin-left:auto;
+    border:none;
+    background-color: var(--accent);
+    color:whitesmoke;
+    padding: 0 15px;
+    border-radius: 15px;
+}
+
+.price{
+    margin-top:auto;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.price p{
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.cta{
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkoutBtn{
+    background-color: var(--accent);
+    color:whitesmoke;
+    border: none;
+    padding: 10px 30px;
+    width:100%;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.checkoutBtn:hover{
+    filter: brightness(1.1);
+    cursor: pointer;
+    transform: scale(1.005);
+}
+
+
+.disabled{
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.checkoutBtn:not(:disabled):hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+    transform: scale(1.005);
+}
+
+.checkoutBtn:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    opacity: 0.7; /* Optional: makes it look even more disabled */
+}
+
+@media (min-width:950px) {
+    .inner{
+        display: flex;
+        flex-direction:row-reverse;
+        justify-content: space-around;
+        gap: 100px;
+    }
+    .cartItms{
+        width: 100%;
+    }   
+
+    .header{
+        width: 100%;
+    }
+
+    .cta button{
+        width: 60%;
+    }
+
+    .wrapper{
+        padding: 30px 50px;
+    }
+
+    .cta{
+        justify-content: flex-start;
+    }
+}

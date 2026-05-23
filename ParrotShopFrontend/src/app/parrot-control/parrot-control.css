@@ -1,0 +1,201 @@
+.content{
+    gap: 20px;
+  background-color: transparent;
+}
+
+.select{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+select {
+    padding: 5px;
+}
+
+.setup{
+    margin-top: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+form input{
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid var(--accent-light);
+    width: 100%;
+}
+
+.selected-colours-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.color-badge {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 7px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.confButton{
+  padding: 0.5rem;
+  color:white;
+  background-color: var(--accent);
+  border-radius: 5px;
+}
+
+
+
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.delButton{
+    padding: 0.5rem;
+    color:white;
+    background-color: rgb(173, 0, 0);
+    border-radius: 5px;
+    
+}
+
+.buttonGenCont{
+        margin-top:15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttonGenCont button{
+  font-size: clamp(0.5rem, 4vw, 1.2rem);
+}
+
+.softDelState{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filething{
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.confButton:disabled{
+  color:grey;
+}
+
+@media (min-width: 800px) {
+  .content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    border:2px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .select {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+  }
+
+  .select select {
+    flex-grow: 1;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    align-items: start;
+  }
+
+  form input[formControlName="name"],
+  form input[formControlName="description"] {
+    grid-column: span 2;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  hr {
+    grid-column: span 2;
+    width: 100%;
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+  }
+
+  .selected-colours-container {
+    grid-column: span 2;
+    justify-content: flex-start;
+  }
+
+  .buttonGenCont{
+    margin-top: 20px;
+  }
+  .buttonGenCont, .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .confButton, .delButton {
+    min-width: 150px;
+    cursor: pointer;
+    transition: transform 0.1s, filter 0.2s;
+  }
+
+  .confButton:hover, .delButton:hover {
+    filter: brightness(1.1);
+  }
+
+  .confButton:active {
+    transform: scale(0.98);
+  }
+
+  label[for="colourSelect"], 
+  #colourSelect {
+    grid-column: span 1;
+  }
+
+}
+
+@media (max-width: 630px) {
+  .buttonGenCont{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

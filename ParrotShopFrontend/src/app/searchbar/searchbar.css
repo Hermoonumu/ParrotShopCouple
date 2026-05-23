@@ -1,0 +1,89 @@
+.searchbar{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.fieldCont{
+    position: relative;
+}
+
+.field{
+    padding:0.3rem;
+    border-radius: 30px;
+    border:3px var(--accent) solid;
+    box-shadow: var(--accent-light) 6px 6px 6px;
+    accent-color: var(--accent);
+    font-size: 1.3rem;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+} 
+
+.field--focus{
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+}
+
+.searchbar input, .fieldCont{
+    width: 100%;
+}
+
+
+.searchbar button{
+    padding: 0.5rem 2rem;
+    border-radius: 30px;
+    background-color: var(--accent);
+    color: whitesmoke;
+    margin-left:1.5rem;
+    position: relative;
+    z-index: 3;
+}
+
+.searchpic{
+    height: 1.2rem;
+    width: auto;
+    fill:whitesmoke;
+}
+
+
+
+.searchPreview, .searchPreviewMobile{
+    position: absolute;
+            top:-30%;
+        left: -10px;
+        
+    background-color: white;
+    border-radius: 30px;
+    border: 2px solid var(--accent);
+    width: calc(100% + 20px);
+    padding: 4rem 1rem 1rem 1rem;
+    z-index: 2;
+    color: black;
+}
+
+.searchPreviewMobile{
+    display: none;
+}
+
+.searchPreview a, .searchPreviewMobile a{
+    display: inline-block;
+    padding: .5rem 0;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+
+}
+
+@media (max-width:950px){
+    .searchPreviewMobile{
+        display: block;
+    }
+    .searchPreview{
+        display: none;
+    }
+
+}

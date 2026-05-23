@@ -1,0 +1,82 @@
+.footer {
+    background-color: var(--accent); /* Uses your earthy olive green */
+    color: whitesmoke;
+    padding: 4rem 5vw 1rem;
+    margin-top: auto; /* Pushes the footer to the bottom of the page */
+}
+
+.footer-container {
+    display: grid;
+    /* Automatically creates columns based on screen size */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.2); /* Soft divider */
+    padding-bottom: 2.5rem;
+}
+
+.brand-section h2 {
+    font-family: 'Playfair Display', serif; /* Matches your hero h1 */
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.brand-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(245, 245, 245, 0.8); /* Slightly dimmed text for contrast */
+}
+
+.footer-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Adds a sleek little underline beneath the headers */
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 40%;
+    height: 2px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.9rem;
+}
+
+.footer-section ul a {
+    color: rgba(245, 245, 245, 0.8);
+    text-decoration: none;
+    transition: color 0.2s ease, padding-left 0.2s ease; /* Smooth hover transition */
+    display: inline-block;
+}
+
+/* On hover, the link brightens and shifts slightly to the right */
+.footer-section ul a:hover {
+    color: whitesmoke;
+    padding-left: 6px; 
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: rgba(245, 245, 245, 0.5);
+}

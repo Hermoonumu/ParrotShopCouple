@@ -1,0 +1,174 @@
+<div id="top"></div>
+<div class="wrapper">
+  <h1 style="font-family: Playfair Display">Browse Parrots</h1>
+
+  <div class="browse-layout">
+    <div class="results-column">
+      <div class="searchres">
+        @for (item of results(); track $index) {
+          <app-item-card class="card" [parrot]="item"></app-item-card>
+        }
+      </div>
+
+      @if (results().length <= 0) {
+        <h2 id="noRes" style="font-family: Playfair Display">No Results =(</h2>
+      }
+    </div>
+
+    <aside class="filters-column">
+      <div class="filter-card">
+        <h3>Filters</h3>
+
+        <form [formGroup]="filterForm" (ngSubmit)="applyFilters()">
+          <div class="filter-group">
+            <label>Price Range (USD)</label>
+            <div class="price-inputs">
+              <input type="number" formControlName="priceFrom" placeholder="Min" />
+              <span>-</span>
+              <input type="number" formControlName="priceTo" placeholder="Max" />
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label>Sort By Price</label>
+            <select formControlName="ascendingPrice">
+              <option [ngValue]="null">Default</option>
+              <option [ngValue]="false">Low to High</option>
+              <option [ngValue]="true">High to Low</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Species</label>
+            <select formControlName="species">
+              <option [ngValue]="null">Any</option>
+              <option [ngValue]="1">Budgerigar</option>
+              <option [ngValue]="2">Cockatiel</option>
+              <option [ngValue]="3">Lovebird</option>
+              <option [ngValue]="4">Parrotlet</option>
+              <option [ngValue]="10">Conure</option>
+              <option [ngValue]="11">Caique</option>
+              <option [ngValue]="12">Ringneck</option>
+              <option [ngValue]="13">Lorikeet</option>
+              <option [ngValue]="14">Quacker</option>
+              <option [ngValue]="20">African Grey</option>
+              <option [ngValue]="21">Amazon Parrot</option>
+              <option [ngValue]="22">Eclectus</option>
+              <option [ngValue]="23">Cockatoo</option>
+              <option [ngValue]="24">Macaw</option>
+              <option [ngValue]="100">Unknown</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Gender</label>
+            <select formControlName="gender">
+              <option [ngValue]="null">Any</option>
+              <option [ngValue]="0">Male</option>
+              <option [ngValue]="1">Female</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Size</label>
+            <select formControlName="size">
+              <option [ngValue]="null">Any</option>
+              <option [ngValue]="1">Small</option>
+              <option [ngValue]="2">Medium</option>
+              <option [ngValue]="3">Large</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Noise Level</label>
+            <select formControlName="noiseLevel">
+              <option [ngValue]="null">Any</option>
+              <option [ngValue]="0">Low</option>
+              <option [ngValue]="1">Medium</option>
+              <option [ngValue]="2">High</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Colour</label>
+            <select formControlName="color">
+              <option [ngValue]="null">Any</option>
+              <option [ngValue]="1">Black</option>
+              <option [ngValue]="2">White</option>
+              <option [ngValue]="4">Red</option>
+              <option [ngValue]="8">Green</option>
+              <option [ngValue]="16">Blue</option>
+              <option [ngValue]="32">Grey</option>
+              <option [ngValue]="64">Colourful</option>
+              <option [ngValue]="128">Pastel</option>
+              <option [ngValue]="256">Muted</option>
+              <option [ngValue]="512">Yellow</option>
+              <option [ngValue]="1024">Orange</option>
+              <option [ngValue]="2048">Brown</option>
+              <option [ngValue]="4096">Pink</option>
+              <option [ngValue]="8192">Purple</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Sociability</label>
+            <select formControlName="sociability">
+              <option [ngValue]="null">Any</option>
+              <option [ngValue]="0">Low</option>
+              <option [ngValue]="1">Medium</option>
+              <option [ngValue]="2">High</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Trainability</label>
+            <select formControlName="trainability">
+              <option [ngValue]="null">Any</option>
+              <option [ngValue]="0">Low</option>
+              <option [ngValue]="1">Medium</option>
+              <option [ngValue]="2">High</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Talkativeness</label>
+            <select formControlName="talkativeness">
+              <option [ngValue]="null">Any</option>
+              <option [ngValue]="0">Low</option>
+              <option [ngValue]="1">Medium</option>
+              <option [ngValue]="2">High</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Chewing Risk</label>
+            <select formControlName="chewingRisk">
+              <option [ngValue]="null">Any</option>
+              <option [ngValue]="0">Low</option>
+              <option [ngValue]="1">Medium</option>
+              <option [ngValue]="2">High</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Care Complexity</label>
+            <select formControlName="careComplexity">
+              <option [ngValue]="null">Any</option>
+              <option [ngValue]="0">Low</option>
+              <option [ngValue]="1">Medium</option>
+              <option [ngValue]="2">High</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Kid Safety</label>
+            <select formControlName="kidSafety">
+              <option [ngValue]="null">Any</option>
+              <option [ngValue]="0">Yes</option>
+              <option [ngValue]="1">No</option>
+              <option [ngValue]="2">Cautious</option>
+            </select>
+          </div>
+
+          <div class="filter-actions">
+            <button type="button" class="clear-btn" (click)="clearFilters()">Clear</button>
+            <button type="submit" class="apply-btn">Apply</button>
+          </div>
+        </form>
+      </div>
+    </aside>
+  </div>
+</div>

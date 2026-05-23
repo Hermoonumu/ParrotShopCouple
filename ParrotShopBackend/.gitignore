@@ -1,0 +1,36 @@
+# Visual Studio and .NET build artifacts
+## Ignore Visual Studio temporary files, build results, and user-specific settings
+.vs/
+*.suo
+*.user
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Tt]est[Rr]esults/
+*.pdb
+*.log
+*.publish
+*.nupkg 
+
+wwwroot/images/*
+
+# NuGet packages
+packages/             # Old style NuGet packages folder (if not using PackageReference)
+
+# Node.js (if frontend is integrated or using Node.js tools)
+node_modules/
+
+# Rider IDE files
+.idea/
+
+# Other common temporary files
+*.tmp
+
+# Visual Studio Code
+.vscode/
+
+# Editor config
+.editorconfig
+
+Migrations/

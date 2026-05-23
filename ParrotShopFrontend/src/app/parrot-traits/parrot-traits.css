@@ -1,0 +1,105 @@
+.content{
+    gap: 20px;
+}
+
+.select{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+select {
+    padding: 5px;
+}
+
+.traitSetup{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+form input{
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid var(--accent-light);
+    width: 100%;
+}
+
+
+sub{
+    margin-top: 10px;
+}
+
+form p{
+    display: none;
+}
+
+.btn{
+    padding: 0.5rem;
+    color:white;
+    background-color: var(--accent);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    width: 50%;
+    margin-top: 20px;
+}
+
+
+@media (min-width: 800px) {
+  .content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    border:2px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .select {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+  }
+
+  .select select {
+    flex-grow: 1;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    align-items: start;
+  }
+
+
+  input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  sub{
+    display: none;
+  }
+
+  form p{
+    display: block;
+  }
+}

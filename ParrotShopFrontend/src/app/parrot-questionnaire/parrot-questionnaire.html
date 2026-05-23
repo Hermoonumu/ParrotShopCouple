@@ -1,0 +1,42 @@
+<div id="top"></div>
+
+<div class="progBar" [style.width]="progress() + '%'"></div>
+<div class="wrapper">
+  <div class="card">
+    <div class="card-body">
+      <h1 style="font-family: Playfair Display">Let's choose you a parrot!</h1>
+      <form action="">
+        <div class="question">
+          <p>{{ questions[currQuestion()] }}</p>
+        </div>
+        <div class="answers" [class.ansGrd]="currQuestion() == 5">
+          @for (ans of currentOptions(); track $index) {
+            <div>
+              <input
+                #radio
+                type="radio"
+                name="answer"
+                [value]="$index"
+                (change)="selectedAnswer.set($index)"
+                [checked]="selectedAnswer() == $index"
+              />
+              <p (click)="selectedAnswer.set($index)">{{ ans }}</p>
+            </div>
+          }
+        </div>
+      </form>
+      <div class="btns">
+        @if (currQuestion() > 0) {
+          <button (click)="onBack()" class="btn">Back</button>
+        }
+        <button class="btn next" (click)="onNext()" [disabled]="selectedAnswer() === null">
+          @if (currQuestion() == 5) {
+            Finish
+          } @else {
+            Next
+          }
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

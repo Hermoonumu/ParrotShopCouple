@@ -1,0 +1,333 @@
+
+header{
+    width: 100%;
+    background-image: url('../../../public/fao-tropics-hero.jpg');
+    object-fit:cover;
+    user-select: none;
+}
+
+app-searchbar {
+    display: none;
+}
+
+
+.header_content {
+    padding: 8rem 10%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0,0,0,0.5);
+    min-height: 60vh;
+}
+
+.header_content a {
+    margin-top: 25px;
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: whitesmoke;
+    text-decoration: none;
+    color: black;
+    border-radius: 30px;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.header_content h1 {
+    font-family: 'Playfair Display', serif;
+    color: whitesmoke;
+    font-size: clamp(2rem, 6vmin, 4.5rem);
+    text-align: center;
+    width: 90vmin;
+    line-height: 1.1;
+}
+
+.home-main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+}
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2, .categories-section h2, .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: #000;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.feature-card {
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f5f5f5;
+    transition: transform 0.3s ease;
+    border: 2px solid var(--accent);
+}
+
+
+.feature-card .icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    line-height: 1.6;
+}
+
+/* Category Grid */
+.categories-section {
+    text-align: center;
+}
+
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.cat-card {
+    border: 2px solid var(--accent-light);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+.cat-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+    transition: color 0.2s ease;
+}
+
+.cat-card p {
+    color: #666;
+    transition: color 0.2s ease;
+}
+
+.cat-card:hover{
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    transition: all 0.2s ease;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 5rem 2rem;
+    border-radius: 30px;
+    border: 2px solid var(--accent);
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    color: #000;
+    margin-bottom: 2.5rem;
+}
+
+.cta-btn {
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    background: var(--accent);
+    color: whitesmoke;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-btn:hover{
+    transform: scale(1.03);
+}
+
+.about-section {
+    width: 100%;
+    padding: 4rem;
+    border-radius: 30px;
+    border: 2px solid var(--accent);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    color: #000;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.about-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+}
+
+.stat h4 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.stat p {
+    color: #666;
+    font-weight: 600;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 4rem;
+    border-radius: 30px;
+    border: 2px solid var(--accent);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.info-item .icon {
+    font-size: 2.5rem;
+    padding: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+}
+
+.info-item h4 {
+    font-size: 1.2rem;
+    color: #222;
+    margin-bottom: 0.3rem;
+}
+
+.info-item p {
+    color: #666;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.spacer{
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    .about-content {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .about-text {
+        flex: 3;
+    }
+    
+    .about-stats {
+        flex: 2;
+        flex-direction: column;
+        border-top: none;
+        border-left: 2px solid #eee;
+        padding-top: 0;
+        padding-left: 3rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 3rem;
+    }
+    
+    .about-section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 950px) {
+    app-searchbar {
+        display: block;
+        padding: 1rem 5%;
+    }
+    .home-main {
+        gap: 5rem;
+        padding: 3rem 5vw;
+    }
+@media (max-width: 400px){
+    .info-item{
+        flex-direction: column;
+    }
+}
+}

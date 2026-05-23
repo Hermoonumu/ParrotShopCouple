@@ -1,0 +1,22 @@
+<div class="del">
+  <div class="delCard">
+    <h1>Account Deletion</h1>
+    <hr />
+    <h4>Are you sure you want to proceed?</h4>
+    <p>
+      This will erase your personal data from our system, except for order history, which will be
+      kept for accounitng reasons. The order history will be completely detached from your identity
+      and cannot be traced back to you. <br /><br />
+      Type in the following phrase to continue.
+    </p>
+    <input
+      type="text"
+      (input)="auth.onDelInput($event.target.value)"
+      placeholder="Yes, I confirm"
+    />
+    <div class="delButtons">
+      <button (click)="auth.delConfirmation.set(false)">No, I'll stay</button>
+      <button class="delButton" (click)="auth.delete()">Yes, delete account</button>
+    </div>
+  </div>
+</div>

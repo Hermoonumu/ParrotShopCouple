@@ -1,0 +1,117 @@
+
+.wrapper{
+    width: 100%;
+    margin: 6vh 0;
+
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
+
+#regSuccess{
+    text-align: center;
+}
+
+.reg, .login{
+    width: 100%;
+}
+
+.modeSelector{
+    padding: 0 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modeSelector button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.highlight{
+    text-decoration: underline;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+}
+
+input{
+    width: 90%;
+    padding: 8px;
+    font-size: 1.2rem;
+    accent-color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+}
+
+.login button, .reg button{
+    width: 70%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: var(--accent);
+    color:whitesmoke;
+    border:none;
+    border-radius: 30px;
+}
+
+button, input {
+    transition: all 0.2s ease-in-out;
+}
+
+
+
+/* Make the inputs pop when typing */
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent-light);
+    border-color: var(--accent);
+}
+
+/* Button interactions */
+.login button:hover, .reg button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.login button:active, .reg button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.login p{
+    text-align: center;
+    margin-top:13px;
+}
+
+
+@media (min-width: 600px){
+    .wrapper{
+        margin-top:15vh;
+    }
+    .card{
+        width: 70%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding:30px;
+        border: 2px solid var(--accent);
+        border-radius: 20px;
+        box-shadow: 6px 6px 6px var(--accent-light);
+    }
+    input{
+        font-size: 1.5rem;
+    }
+
+}

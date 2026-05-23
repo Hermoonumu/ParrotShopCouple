@@ -1,0 +1,42 @@
+@if (!auth.serverUnreachable()) {
+  <div class="page" [style.overflow]="auth.delConfirmation() ? 'hidden' : 'visible'">
+    <app-navbar id="nav"></app-navbar>
+    <main>
+      <router-outlet></router-outlet>
+      <div class="spacer"></div>
+      <app-footer id="ftr"></app-footer>
+    </main>
+  </div>
+  @if (auth.delConfirmation()) {
+    <app-acc-del-card></app-acc-del-card>
+  }
+} @else {
+  <div class="svrNotAvailable">
+    <div class="svrWrapper">
+      <h1>={{ '(' }}</h1>
+      <h2>We're sorry, but we can't accept any requests now. Try again later.</h2>
+      <sub>Reason: The backend server is down and inoperable</sub>
+    </div>
+  </div>
+}
+<!-- <p>{{ 2500 | currency: '₴ ' }}</p>
+<input type="text" (input)="onusernameInput($event.target.value)" />
+<input type="text" (input)="onPwdInput($event.target.value)" />
+
+<h1>{{ user().username }}</h1>
+<h1>{{ user().password }}</h1>
+
+<br />
+
+@for (item of navbar(); track $index) {
+  <a href="">{{ item }}</a>
+}
+
+<button (click)="adminSwitch()">To Admin</button> -->
+
+<!-- @for (user of aList(); track $index) {
+  <div>
+    <h1>{{ user.username }}</h1>
+    <h1>{{ user.password }}</h1>
+  </div>
+} -->

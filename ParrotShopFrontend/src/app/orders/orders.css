@@ -1,0 +1,30 @@
+.wrapper {
+    width: 100%;
+    max-width: 850px; /* Keeps it readable on wide screens */
+    margin: 0 auto;
+    padding: 3vw 5vw;
+}
+
+.header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+.header h2 {
+    font-family: Playfair Display;
+    margin-bottom: 5px;
+    font-size: clamp(30px, 4vw, 45px);
+    color: #000000;
+}
+
+.header p {
+    color: #666;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.orders {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+}

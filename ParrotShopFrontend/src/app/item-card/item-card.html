@@ -1,0 +1,22 @@
+<div class="card" (click)="gotoParrot()">
+  <div class="image">
+    <img
+      [src]="parrot()!.imageUrl == '' ? env.BASEURI + '/broken-image.jpg' : parrot()!.imageUrl"
+      [alt]="parrot()!.name"
+    />
+  </div>
+  <div class="else">
+    <div class="specs">
+      <h3>{{ parrot()!.name }} ({{ parrot()!.speciesType }})</h3>
+      <p>{{ parrot()!.description }}</p>
+    </div>
+    <div class="ctaAndPrice">
+      <div>
+        <p>Price {{ parrot()!.price | currency: 'USD' }}</p>
+        <button [disabled]="buttonDisabled()" (click)="onButtonClick($event)">
+          {{ buttonScript() }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

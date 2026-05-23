@@ -1,0 +1,6 @@
+@ParrotShopBackend_HostAddress = http://localhost:5084
+
+GET {{ParrotShopBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

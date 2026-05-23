@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="header">
+    <svg viewBox="0 0 50 50">
+      <circle style="fill: var(--accent)" cx="25" cy="25" r="25" />
+      <polyline
+        style="
+          fill: none;
+          stroke: #ffffff;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-miterlimit: 10;
+        "
+        points="
+	38,15 22,33 12,25 "
+      />
+    </svg>
+  </div>
+  <h1 style="font-family: Playfair Display">Success!</h1>
+  <h3>
+    Yay! We were able to charge your card. The order is placed. You can track it in 'Orders' tab.
+  </h3>
+
+  <p>You will be redirected to the main page in {{ seconds() }}</p>
+</div>

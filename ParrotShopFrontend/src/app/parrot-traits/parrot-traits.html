@@ -1,0 +1,82 @@
+<div class="content">
+  <div class="select">
+    <label for="parrotSelector">Select a parrot</label>
+    <select name="parrotSelector" id="parrotSelector" (change)="onChange($event)">
+      @for (parrot of parrotList(); track $index) {
+        <option [value]="$index">ID: {{ parrot.id }} | Name: {{ parrot.name }}</option>
+      }
+    </select>
+  </div>
+  <div class="traitSetup">
+    <form [formGroup]="formTraits">
+      <sub>Size</sub>
+      <p>Size</p>
+      <select formControlName="size" id="">
+        <option value="" selected disabled>-- Select to Add --</option>
+        @for (size of sizes; track $index) {
+          <option [value]="size">{{ size }}</option>
+        }
+      </select>
+      <sub>Trainability</sub>
+      <p>Trainability</p>
+      <select formControlName="trainability" id="">
+        <option value="" selected disabled>-- Select to Add --</option>
+        @for (level of levels; track $index) {
+          <option [value]="level">{{ level }}</option>
+        }
+      </select>
+      <sub>Sociability</sub>
+      <p>Sociability</p>
+      <select formControlName="sociability" id="">
+        <option value="" selected disabled>-- Select to Add --</option>
+        @for (level of levels; track $index) {
+          <option [value]="level">{{ level }}</option>
+        }
+      </select>
+      <sub>Talkativeness</sub>
+      <p>Talkativeness</p>
+      <select formControlName="talkativeness" id="">
+        <option value="" selected disabled>-- Select to Add --</option>
+        @for (level of levels; track $index) {
+          <option [value]="level">{{ level }}</option>
+        }
+      </select>
+      <sub>Noise level</sub>
+      <p>Noise level</p>
+      <select formControlName="noiseLevel" id="">
+        <option value="" selected disabled>-- Select to Add --</option>
+        @for (level of levels; track $index) {
+          <option [value]="level">{{ level }}</option>
+        }
+      </select>
+      <sub>Chewing risk</sub>
+      <p>Chewing risk</p>
+      <select formControlName="chewingRisk" id="">
+        <option value="" selected disabled>-- Select to Add --</option>
+        @for (level of levels; track $index) {
+          <option [value]="level">{{ level }}</option>
+        }
+      </select>
+      <sub>Care complexity</sub>
+      <p>Care complexity</p>
+      <select formControlName="careComplexity" id="">
+        <option value="" selected disabled>-- Select to Add --</option>
+        @for (level of levels; track $index) {
+          <option [value]="level">{{ level }}</option>
+        }
+      </select>
+      <sub>Kid safety</sub>
+      <p>Kid safety</p>
+      <select formControlName="kidSafety" id="">
+        <option value="" selected disabled>-- Select to Add --</option>
+        @for (ks of kidSafety; track $index) {
+          <option [value]="ks">{{ ks }}</option>
+        }
+      </select>
+      <button class="btn" (click)="onSubmit()" [disabled]="formTraits.invalid">Set</button>
+    </form>
+    @if (success()) {
+      <p style="color: green; margin-top: 10px; font-size: 1.2rem">Success!</p>
+    }
+  </div>
+</div>

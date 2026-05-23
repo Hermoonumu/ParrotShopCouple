@@ -1,0 +1,45 @@
+<div id="top"></div>
+
+<div class="wrapper">
+  <h1 style="font-family: PlayFair Display">Cart</h1>
+  <div class="inner">
+    <div class="header">
+      <p>See added items and manage your cart right here.</p>
+      <h3>Total items: {{ cart.cart().cartItems.length }}</h3>
+      <h2>Total price: {{ TotalPrice | currency: 'USD' }}</h2>
+      <div class="cta">
+        <button
+          class="checkoutBtn"
+          [disabled]="cart.cart().cartItems.length < 1"
+          (click)="router.navigate(['/checkout'])"
+        >
+          {{ buttonText() }}
+        </button>
+      </div>
+    </div>
+    <div class="cartItms">
+      @for (item of cart.cart().cartItems; track $index) {
+        <div class="cartItem">
+          <div class="image">
+            <img
+              [src]="
+                item.item.imageUrl == '' ? env.BASEURI + '/broken-image.jpg' : item.item.imageUrl
+              "
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <div class="nameAndRemove">
+              <h2>{{ item.item.name }}</h2>
+              <button (click)="removeFromCart(item.item.id!)">Remove</button>
+            </div>
+            <p>{{ item.item.speciesType }}</p>
+            <div class="price">
+              <p>{{ item.item.price | currency: 'USD' }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

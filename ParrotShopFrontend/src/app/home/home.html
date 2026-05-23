@@ -1,0 +1,135 @@
+<div id="top"></div>
+
+<header>
+  <div class="header_content" [style.backgroundImage]="env.ASSETURI + 'fao-tropics-hero.jpg'">
+    <h1>Get your own bespoke parrot today at ParrotShop!</h1>
+  </div>
+</header>
+<app-searchbar></app-searchbar>
+<main class="home-main">
+  <section class="info-section">
+    <div class="section-header">
+      <h2>Find Your Perfect Feathered Friend</h2>
+      <p>
+        We don't just sell parrots; we match you with a lifelong companion based on your unique
+        lifestyle and home environment.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">📝</div>
+        <h3>1. Take the Quiz</h3>
+        <p>Tell us about your noise tolerance, experience level, and household setup.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">✨</div>
+        <h3>2. Get Matched</h3>
+        <p>Our algorithm filters through dozens of species to find your perfect fit.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🏡</div>
+        <h3>3. Bring Them Home</h3>
+        <p>Safe transport, expert care guides, and everything you need for day one.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories-section">
+    <h2>Browse by Size</h2>
+    <div class="cat-grid">
+      <div class="cat-card" routerLink="/shop">
+        <h3>Small Parrots</h3>
+        <p>Budgies, Cockatiels, Lovebirds</p>
+      </div>
+      <div class="cat-card" routerLink="/shop">
+        <h3>Medium Parrots</h3>
+        <p>Conures, Quakers, Caiques</p>
+      </div>
+      <div class="cat-card" routerLink="/shop">
+        <h3>Large Parrots</h3>
+        <p>Macaws, Cockatoos, African Greys</p>
+      </div>
+    </div>
+  </section>
+  <div class="spacer" id="aboutanchor"></div>
+  <section id="about" class="about-section">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About ParrotShop</h2>
+        <p>
+          Founded by avian enthusiasts, ParrotShop is dedicated to ethical breeding and lifelong
+          pairing. We believe that bringing a parrot into your life is a major commitment, which is
+          why we focus on bespoke matching rather than simple transactions.
+        </p>
+        <p>
+          Every bird in our care is hand-reared, socially adapted, and health-certified by exotic
+          veterinarians before they ever meet their new family.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <h4>10+</h4>
+          <p>Years of Experience</p>
+        </div>
+        <div class="stat">
+          <h4>500+</h4>
+          <p>Happy Families</p>
+        </div>
+        <div class="stat">
+          <h4>24/7</h4>
+          <p>Support Provided</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="spacer" id="contactanchor"></div>
+  <section id="contact" class="contact-section">
+    <div class="section-header">
+      <h2>Get in Touch</h2>
+      <p>
+        Have questions about a specific species or our matching process? We are here to help you
+        navigate the journey.
+      </p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="info-item">
+          <span class="icon">📍</span>
+          <div>
+            <h4>Visit Us</h4>
+            <p>123 Feather Lane, Bialystok, Poland</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="icon">📧</span>
+          <div>
+            <h4>email Us</h4>
+            <p>support@parrotshop.com</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="icon">📞</span>
+          <div>
+            <h4>Call Us</h4>
+            <p>+48 123 456 789</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your email" required />
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button class="cta-btn" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Not sure where to start?</h2>
+    <p>Let our bespoke recommendation engine do the heavy lifting for you.</p>
+    <button class="cta-btn" routerLink="/parrotQuestionnaire">Start the Questionnaire</button>
+  </section>
+</main>

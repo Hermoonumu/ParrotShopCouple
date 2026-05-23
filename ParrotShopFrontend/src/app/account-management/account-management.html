@@ -1,0 +1,100 @@
+<div id="top"></div>
+<div class="mgmtCont">
+  <div class="mgmtHeader">
+    <h1>Hi there, {{ auth.state().name }}!</h1>
+    <p>Manage your personal information, review your data, or delete your account.</p>
+  </div>
+
+  <div class="mgmt-body">
+    <div class="card profile-card">
+      <h2>Profile Details</h2>
+
+      <form [formGroup]="userForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="Name"
+              Name="Name"
+              [value]="auth.state().name"
+              placeholder="John Doe"
+              required
+              formControlName="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              [value]="auth.state().username"
+              placeholder="johndoe123"
+              required
+              formControlName="username"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [value]="auth.state().email"
+              placeholder="john@example.com"
+              required
+              formControlName="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              [value]="auth.state().phone"
+              placeholder="+48 123 456 789"
+              required
+              formControlName="phone"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="shipping">Shipping Address</label>
+          <textarea
+            id="shipping"
+            name="shipping"
+            rows="3"
+            [value]="auth.state().shippingaddress"
+            placeholder="123 Parrot Street, Bird City..."
+            required
+            formControlName="shippingaddress"
+          ></textarea>
+        </div>
+        @if (errmsg() != '') {
+          <p style="color: red">{{ errmsg() }}</p>
+        }
+        @if (successmessage() != '') {
+          <p style="color: green">{{ successmessage() }}</p>
+        }
+
+        <div class="form-actions">
+          <button (click)="saveChanges()" class="btn-save">Save Changes</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card actions-card">
+      <h2>Account Actions</h2>
+      <div class="mainMgmt">
+        <button class="logout" (click)="logout()">Log off</button>
+        <button class="delAcc" (click)="deleteAccount()">Delete Account</button>
+      </div>
+    </div>
+  </div>
+</div>

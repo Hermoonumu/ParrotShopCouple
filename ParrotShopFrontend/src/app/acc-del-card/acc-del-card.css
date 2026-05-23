@@ -1,0 +1,70 @@
+.del{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    z-index: 6;
+}
+
+.delCard{
+    background-color: white;
+    padding: 40px 15px;
+}
+
+.delCard h1{
+    margin-bottom: 30px;
+}
+
+.delCard h4{
+    margin-bottom: 10px;
+}
+
+.delButtons{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.delButtons button{
+    padding: 10px;
+    border-radius: 15px;
+    font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+}
+
+.delButton{
+    background-color: rgb(205, 0, 0);
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+.delCard input{
+    width: 100%;
+    padding: 8px;
+    font-size: 1.2rem;
+    accent-color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    margin-top:15px;
+}
+
+hr{
+    margin-bottom: 15px;
+}
+
+@media (min-width: 600px) {
+    .delCard{
+        background-color: whitesmoke;
+        padding: 30px;
+        font-size: 1.3rem;
+        padding:30px;
+        border-radius: 30px;
+        max-width: clamp(450px, 40%, 600px);
+    }
+}

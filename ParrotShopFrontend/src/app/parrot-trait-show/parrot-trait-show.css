@@ -1,0 +1,60 @@
+.traits{
+    display: flex;
+    margin-top:25px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.col1, .col2{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 50%;
+}
+    
+
+.traitelem{
+    width: 80%;
+    height: 40px;
+    display: flex;
+    gap:20px;
+    align-items: center;
+}
+
+.traitelem img{
+    height: auto;
+    width: 50px;
+}
+
+.point{
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: var(--accent);
+    
+}
+
+.pointsInner{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    
+}
+
+.points{
+    display: flex;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.unknown{
+    font-size: 25px;
+}
+
+@media (max-width:800px) {
+
+    .traitelem img{
+        width: 40px;
+    }
+}

@@ -1,0 +1,118 @@
+<div class="traits">
+  <div class="col1">
+    <div class="traitelem">
+      <img src="/sizeico.png" alt="" />
+      <div class="points">
+        @if (parrot().traits?.size != null) {
+          <div class="pointsInner">
+            @for (i of [].constructor(size[parrot().traits!.size!]); track $index) {
+              <div class="point"></div>
+            }
+          </div>
+        } @else {
+          <div class="unknown">?</div>
+        }
+      </div>
+    </div>
+    <div class="traitelem">
+      <img src="/noiseico.png" alt="" />
+      <div class="points">
+        @if (parrot().traits?.noiseLevel != null) {
+          <div class="pointsInner">
+            @for (i of [].constructor(level[parrot().traits?.noiseLevel!]); track $index) {
+              <div class="point"></div>
+            }
+          </div>
+        } @else {
+          <div class="unknown">?</div>
+        }
+      </div>
+    </div>
+    <div class="traitelem">
+      <img src="/sociabilityico.png" alt="" />
+      <div class="points">
+        @if (parrot().traits?.sociability != null) {
+          <div class="pointsInner">
+            @for (i of [].constructor(level[parrot().traits?.sociability!]); track $index) {
+              <div class="point"></div>
+            }
+          </div>
+        } @else {
+          <div class="unknown">?</div>
+        }
+      </div>
+    </div>
+    <div class="traitelem">
+      <img src="/levelicon.png" alt="" />
+      <div class="points">
+        @if (parrot().traits?.careComplexity != null) {
+          <div class="pointsInner">
+            @for (i of [].constructor(level[parrot().traits?.careComplexity!]); track $index) {
+              <div class="point"></div>
+            }
+          </div>
+        } @else {
+          <div class="unknown">?</div>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="col2">
+    <div class="traitelem">
+      <img src="/trainabilityico.png" alt="" />
+      <div class="points">
+        @if (parrot().traits?.trainability != null) {
+          <div class="pointsInner">
+            @for (i of [].constructor(level[parrot().traits?.trainability!]); track $index) {
+              <div class="point"></div>
+            }
+          </div>
+        } @else {
+          <div class="unknown">?</div>
+        }
+      </div>
+    </div>
+    <div class="traitelem">
+      <img src="/talkativenessico.png" alt="" />
+      <div class="points">
+        @if (parrot().traits?.talkativeness != null) {
+          <div class="pointsInner">
+            @for (i of [].constructor(level[parrot().traits?.talkativeness!]); track $index) {
+              <div class="point"></div>
+            }
+          </div>
+        } @else {
+          <div class="unknown">?</div>
+        }
+      </div>
+    </div>
+    <div class="traitelem">
+      <img src="/chewingriskico.png" alt="" />
+      <div class="points">
+        @if (parrot().traits?.chewingRisk != null) {
+          <div class="pointsInner">
+            @for (i of [].constructor(level[parrot().traits?.chewingRisk!]); track $index) {
+              <div class="point"></div>
+            }
+          </div>
+        } @else {
+          <div class="unknown">?</div>
+        }
+      </div>
+    </div>
+    <div class="traitelem">
+      <img src="/kidsafetyico.png" alt="" />
+      <div class="points">
+        @if (parrot().traits?.kidSafety != null) {
+          <div class="pointsInner">
+            @for (i of [].constructor(kidsafety[parrot().traits?.kidSafety!]); track $index) {
+              <div class="point"></div>
+            }
+          </div>
+        } @else {
+          <div class="unknown">?</div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

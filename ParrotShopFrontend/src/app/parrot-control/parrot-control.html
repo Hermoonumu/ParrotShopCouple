@@ -1,0 +1,124 @@
+<div class="content">
+  <div class="select">
+    <label for="parrotSelector">Select a parrot</label>
+    <select name="parrotSelector" id="parrotSelector" (change)="onChange($event)">
+      <option value="-1">Add new one</option>
+      @for (parrot of parrotList(); track $index) {
+        <option [value]="$index">ID: {{ parrot.id }} | Name: {{ parrot.name }}</option>
+      }
+    </select>
+  </div>
+  <div class="setup">
+    @if (selected() == -1) {
+      <h2>New</h2>
+      <div class="filething">
+        <label for="filething">Select an image file</label>
+        <input
+          type="file"
+          #fileInput
+          (change)="onFileSelected($event)"
+          accept=".jpg, image/jpg"
+          placeholder="Select an image file"
+        />
+      </div>
+      <form [formGroup]="formNewParrot">
+        <input type="text" formControlName="name" placeholder="Name" />
+        <input type="text" formControlName="description" placeholder="Description" />
+        <input type="number" formControlName="price" placeholder="Price" />
+        <input type="number" formControlName="discount" placeholder="Discount" />
+        <input type="number" formControlName="age" placeholder="Age" />
+        <select formControlName="genderType" id="">
+          <option value="0">Male</option>
+          <option value="1">Female</option>
+        </select>
+        <select formControlName="speciesType">
+          <option [value]="0" selected disabled>-- Select to Add --</option>
+          @for (speciesStr of speciesNames; track $index) {
+            <option [ngValue]="species[speciesStr]">{{ speciesStr }}</option>
+          }
+        </select>
+        <hr />
+        <label for="colourSelect">Add a Colour:</label>
+        <select id="colourSelect" (change)="addColor($event)">
+          <option [value]="0" selected disabled>-- Click to select --</option>
+          @for (colour of colourNames; track $index) {
+            <option [value]="colours[colour]">{{ colour }}</option>
+          }
+        </select>
+        <div class="selected-colours-container">
+          @for (c of currentColors; track $index) {
+            <button type="button" class="color-badge" (click)="removeColor(c)">
+              {{ getColorName(c) }} <span>&times;</span>
+            </button>
+          }
+        </div>
+      </form>
+      <div class="buttonGenCont">
+        <button (click)="onSubmit()" [disabled]="formNewParrot.invalid" class="confButton">
+          Add Parrot
+        </button>
+      </div>
+    } @else {
+      <h2>Alter</h2>
+      <div class="filething">
+        <label for="filething">Select an image file</label>
+        <input
+          type="file"
+          #fileInput
+          (change)="onFileSelected($event)"
+          accept=".jpg, image/jpg"
+          placeholder="Select an image file"
+        />
+      </div>
+      <form [formGroup]="formAlterParrot">
+        <input type="text" formControlName="name" placeholder="Name" />
+        <input type="text" formControlName="description" placeholder="Description" />
+        <input type="number" formControlName="price" placeholder="Price" />
+        <input type="number" formControlName="discount" placeholder="Discount" />
+        <input type="number" formControlName="age" placeholder="Age" />
+        <select formControlName="genderType">
+          <option [value]="'Male'">Male</option>
+          <option [value]="'Female'">Female</option>
+        </select>
+        <select formControlName="speciesType">
+          <option [value]="0" selected disabled>-- Select to Add --</option>
+          @for (speciesStr of speciesNames; track $index) {
+            <option [ngValue]="speciesStr">{{ speciesStr }}</option>
+          }
+        </select>
+        <hr />
+        <label for="colourSelect">Add a Colour:</label>
+        <select id="colourSelect" (change)="addColor($event)">
+          <option [value]="0" selected disabled>-- Click to select --</option>
+          @for (colour of colourNames; track $index) {
+            <option [value]="colours[colour]">{{ colour }}</option>
+          }
+        </select>
+        <div class="selected-colours-container">
+          @for (c of currentColors; track $index) {
+            <button type="button" class="color-badge" (click)="removeColor(c)">
+              {{ getColorName(c) }} <span>&times;</span>
+            </button>
+          }
+        </div>
+      </form>
+      <div class="buttonGenCont">
+        <div class="buttons">
+          <button (click)="onSubmit()" [disabled]="formAlterParrot.invalid" class="confButton">
+            Alter Parrot
+          </button>
+          <button (click)="onDelete()" class="delButton">Soft Delete Parrot</button>
+        </div>
+        <div class="softDelState">
+          @if (selectedParrot().isDeleted) {
+            <p style="color: red">Soft Deleted</p>
+            <button (click)="onUndoDelete()" class="confButton">Undo delete</button>
+          }
+        </div>
+      </div>
+    }
+    @if (success()) {
+      <p style="color: green">Success!</p>
+    }
+  </div>
+</div>

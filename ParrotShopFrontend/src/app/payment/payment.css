@@ -1,0 +1,22 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.wrapperPay{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.button{
+    padding: 10px;
+    border: none;
+    background-color: var(--accent);
+    color: whitesmoke;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 1.3rem;
+}

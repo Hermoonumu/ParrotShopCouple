@@ -1,0 +1,67 @@
+<div id="top"></div>
+
+<div class="wrapper">
+  <div class="card">
+    @if (auth.regSuccess()) {
+      <h3 id="regSuccess" style="color: rgb(0, 176, 0)">Nice! Now try logging in.</h3>
+    }
+    <div class="modeSelector">
+      <button (click)="toggleMode(true)" [class.highlight]="isLoginMode()">Login</button
+      ><button (click)="toggleMode(false)" [class.highlight]="!isLoginMode()">Register</button>
+    </div>
+    @if (isLoginMode()) {
+      <div class="login">
+        <form [formGroup]="formLogin">
+          <input type="text" formControlName="username" placeholder="Username" required />
+          <input type="password" formControlName="password" placeholder="Password" required />
+          <button (click)="submitLogin()">Sign In</button>
+        </form>
+        @if (auth.message()) {
+          <p style="color: red">{{ auth.message() }}</p>
+        } @else if (nativeMsg()) {
+          <p style="color: red">{{ nativeMsg() }}</p>
+        }
+      </div>
+    } @else {
+      <div class="reg">
+        <form [formGroup]="formRegister">
+          <input type="text" formControlName="name" placeholder="Name" required />
+          @if (auth.regErrors().name) {
+            <p style="color: red; font-size: 10px">{{ auth.regErrors().name[0] }}</p>
+          }
+          <input type="text" formControlName="username" placeholder="Username" required />
+          @if (auth.regErrors().username) {
+            <p style="color: red; font-size: 10px">{{ auth.regErrors().username[0] }}</p>
+          }
+          <input type="tel" formControlName="phone" placeholder="Phone" required />
+          @if (auth.regErrors().phone) {
+            <p style="color: red; font-size: 10px">{{ auth.regErrors().phone[0] }}</p>
+          }
+          <input type="text" formControlName="shippingaddress" placeholder="Address" required />
+          @if (auth.regErrors().shippingaddress) {
+            <p style="color: red; font-size: 10px">{{ auth.regErrors().shippingaddress[0] }}</p>
+          }
+          <input type="email" formControlName="email" placeholder="Email" required />
+          @if (auth.regErrors().email) {
+            <p style="color: red; font-size: 10px">{{ auth.regErrors().email[0] }}</p>
+          }
+          <input type="password" formControlName="password" placeholder="Password" required />
+          @if (auth.regErrors().password) {
+            <p style="color: red; font-size: 10px">{{ auth.regErrors().password[0] }}</p>
+          }
+          <input
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+          @if (auth.regErrors().ConfirmPassword) {
+            <p style="color: red; font-size: 10px">{{ auth.regErrors().ConfirmPassword }}</p>
+          }
+          <button (click)="submitSignUp()">Sign Up</button>
+        </form>
+        <p>{{ auth.message() }}</p>
+      </div>
+    }
+  </div>
+</div>

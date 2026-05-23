@@ -1,0 +1,43 @@
+<div id="top"></div>
+
+<div class="wrapper">
+  <h1 class="label" style="font-family: PlayFair Display">Store assets management</h1>
+  <div class="main">
+    <div class="options">
+      <div class="mobile">
+        <label for="section">Select a section</label>
+        <select name="section" (change)="onChange($event)">
+          <option value="manp">Manage parrots</option>
+          <option value="part">Parrot traits</option>
+          <option value="ord">Orders</option>
+        </select>
+      </div>
+      <div class="desktop">
+        <button class="deskbtn" (click)="onBtnClick('manp')" [class.active]="section() == 'manp'">
+          Manage parrot
+        </button>
+        <button class="deskbtn" (click)="onBtnClick('part')" [class.active]="section() == 'part'">
+          Parrot traits
+        </button>
+        <button class="deskbtn" (click)="onBtnClick('ord')" [class.active]="section() == 'ord'">
+          Orders
+        </button>
+      </div>
+    </div>
+    <hr />
+    <div class="content">
+      @if (section() == 'manp') {
+        <app-parrot-control></app-parrot-control>
+      }
+      @if (section() == 'part') {
+        <app-parrot-traits></app-parrot-traits>
+      }
+      @if (section() == 'ord') {
+        <app-order-mgmt></app-order-mgmt>
+      }
+      @if (section() == 'usr') {
+        <app-user-mgmt></app-user-mgmt>
+      }
+    </div>
+  </div>
+</div>

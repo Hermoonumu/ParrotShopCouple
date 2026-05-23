@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="header">
+    <h2 class="page-title">Order Management</h2>
+
+    <div class="filter-group">
+      <label for="orderFilter">Show:</label>
+      <select id="orderFilter" (change)="switch($event)">
+        <option value="true">Pending Orders</option>
+        <option value="false">All Orders</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="cont">
+    @for (order of orders(); track $index) {
+      <app-order-card [order]="order" [admin]="1" (statusChanged)="update()"></app-order-card>
+    }
+  </div>
+</div>

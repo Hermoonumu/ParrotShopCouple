@@ -1,0 +1,86 @@
+.wrapper{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.progBar{
+    height:7px;
+    background-color: var(--accent-mid);
+    transition: width 0.5s ease-in-out, transform 0.3s ease;
+}
+
+.card{
+    width: 100%;
+    max-width: 600px;
+    padding-top: 3rem;
+}
+
+.card-body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 20px;
+    gap: 50px;
+    height: clamp(50vh, 40vh, 70dvh);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+p{
+    font-size: clamp(1rem, 2vw, 1.5rem)
+}
+
+
+.card-body h1{
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    
+}
+
+.answers {
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+}
+.answers div{
+    display: flex;
+    gap: 15px;
+}
+
+.btn{
+    padding: 6px 30px;
+    font-size: clamp(20px, 2vw, 25px);
+    border-radius: 10px;
+    border: 2px solid var(--accent-light);
+    background-color: var(--accent);
+    color:whitesmoke;
+}
+
+.btn:disabled{
+    color:rgb(165, 165, 165);
+}
+
+.next{
+    margin-left: auto;
+}
+
+.btns{
+    display: flex;
+    width:100%;
+    max-width: 600px;
+    justify-content: space-between;
+    margin-top:auto;
+
+}
+
+.ansGrd{
+    display: grid;
+    grid-template-columns: auto auto;
+}

@@ -1,0 +1,53 @@
+<div id="top"></div>
+
+<div class="wrapper">
+  <div class="prod">
+    <div class="picture">
+      @if (parrot().imageUrl != '') {
+        <img [src]="parrot().imageUrl" [alt]="parrot().name + '\'s picture'" />
+      } @else {
+        <h1 style="font-family: Playfair Display">No Picture</h1>
+      }
+    </div>
+    <div class="details">
+      <div id="header">
+        <h1 class="name">{{ parrot().name }}</h1>
+        <h1 class="price">{{ parrot().price | currency: 'USD' }}</h1>
+      </div>
+      <h3>
+        of {{ parrot().speciesType }} breed &nbsp;&nbsp;
+        {{ parrot().genderType?.toString() == 'Male' ? 'He ' : 'She ' }} is
+        <button
+          style="display: inline-block"
+          class="color-badge"
+          [style.background]="parrot().genderType?.toString() == 'Male' ? 'blue' : 'pink'"
+          [style.color]="parrot().genderType?.toString() == 'Male' ? 'white' : 'black'"
+        >
+          {{ parrot().genderType }}
+        </button>
+      </h3>
+      <p>{{ parrot().description }}</p>
+      <app-parrot-trait-show [parrotMid]="parrot()"></app-parrot-trait-show>
+      <div class="colors">
+        @for (c of currentColors; track $index) {
+          <button
+            type="button"
+            class="color-badge"
+            [style.color]="textCol(c)"
+            [style.background]="getBackgroundCol(c)"
+          >
+            {{ c }}
+          </button>
+        }
+      </div>
+      <button
+        class="cartBtn"
+        [disabled]="buttonDisabled()"
+        [class.disable]="buttonDisabled()"
+        (click)="toCart()"
+      >
+        {{ buttonScript() }}
+      </button>
+    </div>
+  </div>
+</div>

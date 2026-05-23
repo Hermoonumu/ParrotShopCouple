@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <h1 style="font-family: Playfair Display">We've found something you might be interested in</h1>
+  <div class="searchres">
+    @for (item of parrots(); track $index) {
+      <app-item-card class="card" [parrot]="item"></app-item-card>
+    }
+  </div>
+</div>

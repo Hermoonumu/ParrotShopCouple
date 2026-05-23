@@ -1,0 +1,53 @@
+
+.page{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fffbf1;
+
+}
+
+#nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 100;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.svrNotAvailable{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 6vw;
+    user-select: none;
+}
+
+.svrWrapper{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
+.svrWrapper h1{
+    font-size: 102px;
+}
+
+.svrWrapper sub{
+    text-align: center;
+}
+
+#ftr{
+    display: block;
+    margin-top:auto;
+}
+.spacer{
+    height: 200px;
+}

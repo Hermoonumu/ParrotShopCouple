@@ -1,0 +1,21 @@
+<div id="top"></div>
+
+<div class="wrapper">
+  <div class="searchbar">
+    <app-searchbar></app-searchbar>
+  </div>
+  <h1 style="font-family: Playfair Display">Search Results</h1>
+  <div class="searchres">
+    @for (item of results(); track $index) {
+      <app-item-card class="card" [parrot]="item"></app-item-card>
+    }
+    @if (results().length === (page() + 1) * 10) {
+      <div class="moreBtn">
+        <button (click)="more()">Load more</button>
+      </div>
+    }
+  </div>
+  @if (results().length <= 0) {
+    <h2 id="noRes" style="font-family: Playfair Display">No Results =(</h2>
+  }
+</div>

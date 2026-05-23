@@ -1,0 +1,63 @@
+.wrapper{
+    padding:1.5rem;
+}
+
+.label{
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+.desktop{
+    display: none;
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+
+.options select{
+    width: 40%;
+    accent-color: var(--accent);
+    border: 2px solid var(--accent-light);
+    border-radius: 5px;
+}
+
+.main hr{
+    margin:10px 0;
+}
+
+select {
+    padding: 5px;
+}
+
+
+
+@media (min-width:800px) {
+    .desktop{
+        display: block;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .deskbtn {
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        padding: 10px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+    .main hr{
+        margin-top: 0;
+    }
+
+    .active{
+        background-color: var(--accent);
+        color: rgb(255, 255, 255);
+    }
+    .mobile{
+        display: none;
+    }
+
+}

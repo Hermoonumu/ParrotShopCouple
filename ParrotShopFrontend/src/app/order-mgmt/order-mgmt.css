@@ -1,0 +1,71 @@
+.wrapper {
+    width: 100%;
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 2rem 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--accent); 
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: #222;
+    margin: 0;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #444;
+}
+
+.filter-group select {
+    padding: 8px 15px;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    background-color: transparent;
+    color: #222;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+.filter-group select:hover,
+.filter-group select:focus {
+    box-shadow: 0 0 8px var(--accent-light);
+    background-color: rgba(80, 104, 2, 0.05); 
+}
+
+.filter-group select option {
+    background-color: #fffbf1; 
+    color: #222;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,197 @@
+.card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 16px;
+    overflow: hidden; /* Keeps the inner backgrounds inside the rounded corners */
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    background: #fafafa;
+}
+
+.meta h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    color: #222;
+}
+
+/* Status Pill */
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    background: #eef2ff; /* Very soft blue */
+    color: var(--accent); /* Uses your accent color for the text */
+}
+
+/* Sleek ghost button */
+.toggle-btn {
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+/* Items Receipt Layout */
+.items-list {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px dashed #dcdcdc; /* Dashed line for receipt feel */
+}
+
+.item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.item-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.item-info p {
+    margin: 0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.item-price {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #222;
+}
+
+
+.card-footer h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.card-footer .total-price {
+    font-size: 1.4rem;
+    color: #111;
+}
+
+select{
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid var(--accent);
+}
+
+
+
+
+.change button{
+    background-color: var(--accent);
+    color:whitesmoke;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    background: #fafafa;
+    border-top: 1px solid #eaeaea;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.total-block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto; 
+}
+
+.total-block h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.total-block .total-price {
+    font-size: 1.4rem;
+    color: #111;
+    margin: 0;
+}
+
+.admin-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; 
+}
+
+.admin-controls select {
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 2px solid var(--accent);
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.admin-controls button {
+    background-color: var(--accent);
+    color: whitesmoke;
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.admin-controls button:hover {
+    filter: brightness(1.1);
+}
+
+@media (max-width: 675px) {
+    .card-footer {
+        flex-direction: column-reverse; 
+        align-items: stretch;
+    }
+
+    .admin-controls {
+        display: flex;
+    }
+
+    .admin-controls select {
+        flex: 1; 
+    }
+}
